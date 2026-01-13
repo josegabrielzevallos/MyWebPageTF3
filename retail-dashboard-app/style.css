@@ -1,0 +1,1014 @@
+/**************************************************************/
+/* ========================================================== */
+/* CRITERIA 11: CSS Variables (Custom Properties)             */
+/* ========================================================== */
+:root {
+  --primary-color: #0b7285;
+  --secondary-color: #37b24d;
+  --text-dark: #0b1d26;
+  --text-light: #f8f9fa;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --max-width: 1200px;
+  --transition-speed: 0.3s;
+  --border-radius: 1rem;
+}
+
+/* ========================================================== */
+/* CRITERIA 18: CSS Units - Using rem for responsiveness      */
+/* ========================================================== */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  /* 16px base, allows user zoom */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ========================================================== */
+/* CRITERIA 17: Flexible Images CSS                           */
+/* All images responsive by default with maintained ratio     */
+/* ========================================================== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  /* Maintains aspect ratio */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background: linear-gradient(rgba(11, 114, 133, 0.75), rgba(55, 178, 77, 0.75)), url(./images/img-background.webp) no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* ========================================================== */
+/* CRITERIA 7: CSS Selector Grouping                          */
+/* Multiple selectors sharing the same styles                 */
+/* ========================================================== */
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+a:link {
+  color: var(--text-light);
+}
+
+a:visited {
+  color: #d8f3dc;
+}
+
+a:hover {
+  color: #ffe066;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #ff922b;
+}
+
+/* ========================================================== */
+/* CRITERIA 19: Responsive Typography using clamp()           */
+/* ========================================================== */
+p {
+  color: rgb(20, 9, 70);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+h2 {
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+
+/**************************************************/
+/* ========================================================== */
+/* CRITERIA 10: CSS Fixed/Sticky Position                     */
+/* Header stays fixed at top while scrolling                  */
+/* ========================================================== */
+header {
+  background: rgba(11, 29, 38, 0.8);
+  color: var(--text-light);
+  padding: 0.5rem;
+  border-bottom: 4px solid var(--secondary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  min-height: min-content;
+}
+
+/* CRITERIA 19: Responsive Typography with clamp() */
+.header-title {
+  margin: 0;
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
+  text-align: center;
+}
+
+nav {
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  max-width: var(--max-width);
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spacer {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+/* ========================================================== */
+/* CRITERIA 6: CSS Selector Chaining                          */
+/* Element with class AND attribute or multiple classes       */
+/* ========================================================== */
+nav a.current {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgb(61, 223, 238);
+}
+
+/* ========================================================== */
+/* CRITERIA 9: CSS Relative Position                          */
+/* Parent container for absolute positioned submenu           */
+/* ========================================================== */
+#services-li {
+  position: relative;
+}
+
+/* ========================================================== */
+/* CRITERIA 8: CSS Absolute Position                          */
+/* Dropdown menu positioned relative to parent                */
+/* ========================================================== */
+/* CRITERIA 13: CSS Transitions for smooth animations         */
+#services-menu {
+  position: absolute;
+  top: calc(100% + 0.625rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 10rem;
+  padding: 0.5rem 0.625rem;
+  background: #323f42;
+  border: 1px solid #3b4a50;
+  border-radius: 0.625rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+  display: grid;
+  gap: 0.375rem;
+  opacity: 0;
+  visibility: hidden;
+  /* CRITERIA 13: CSS Transitions */
+  transition: opacity var(--transition-speed) ease,
+    transform var(--transition-speed) ease,
+    visibility var(--transition-speed);
+  z-index: 1001;
+}
+
+/* ========================================================== */
+/* CRITERIA 5: Advanced CSS Selectors                         */
+/* Using :hover and :focus-within pseudo-class combinators    */
+/* ========================================================== */
+#services-li:hover #services-menu,
+#services-li:focus-within #services-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+#services-menu li {
+  margin: 0;
+}
+
+#services-menu a {
+  white-space: nowrap;
+  color: #e9f0ff;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.5rem;
+  display: block;
+  /* CRITERIA 13: Transition on hover */
+  transition: background-color var(--transition-speed) ease;
+}
+
+#services-menu a:hover {
+  background: #405159;
+}
+
+
+/**************************************************/
+/* ---------- Main Section (Mobile First) ---------- */
+main {
+  padding: 1rem;
+  padding-top:11rem;
+  margin: 0 auto;
+  background-color: rgba(248, 249, 250, 0.88);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(11, 114, 133, 0.3);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 25px rgba(11, 29, 38, 0.15);
+  background: linear-gradient(to bottom, white, #275361);
+}
+
+.hero-text {
+  width: 100%;
+  text-align: center;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* ========================================================== */
+/* CRITERIA 7: CSS Selector Grouping (buttons share styles)   */
+/* CRITERIA 13: CSS Transitions on buttons                    */
+/* ========================================================== */
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-weight: 700;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+
+  transition: transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+}
+
+.button-secondary {
+  background-color: #727475;
+  color: var(--secondary-color);
+  border-color: #5d5d5d;
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-img {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.75rem;
+}
+
+/* ---------- Sections and cards (Mobile First) ---------- */
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  color: var(--primary-color);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================================== */
+/* CRITERIA 15: CSS Pseudo-elements (::before and ::after)    */
+/* Adding decorative element to cards                         */
+/* ========================================================== */
+.card {
+  background: var(--card-bg);
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(11, 29, 38, 0.1);
+  margin: 0;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* CRITERIA 15: Pseudo-element ::before for decorative line */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.benefit {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0.75rem;
+}
+
+.stats {
+  margin: 1.5rem 0;
+  background: rgba(11, 29, 38, 0.8);
+  color: var(--text-light);
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.stat-item {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+}
+
+.inline-text {
+  display: inline;
+  background: #e7f5ff;
+  padding: 0.25rem;
+}
+
+/* ---------- Float and Clear Example (Mobile First) ---------- */
+.float-wrapper {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+
+.float-card {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(11, 114, 133, 0.15);
+  border-left: 4px solid var(--secondary-color);
+  border-radius: 0.5rem;
+}
+
+.clear-floats {
+  clear: both;
+}
+
+/* ---------- Overflow Example ---------- */
+.overflow-panel {
+  max-height: 9.375rem;
+  overflow-y: auto;
+  padding: 1rem;
+  border: 1px dashed rgba(11, 114, 133, 0.4);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/**************************************************/
+/* ---------- Footer Section (Mobile First) ---------- */
+footer {
+  background: rgba(11, 29, 38, 0.85);
+  color: var(--text-light);
+  padding: 1rem;
+  text-align: center;
+}
+
+/* CRITERIA 5: Advanced Selector - Descendant combinator */
+footer p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: rgb(255, 255, 255);
+}
+
+                   
+/* Pulse animation for emergency banner                       */
+/* ========================================================== */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+/*  Using animation with 4+ properties */
+#emergency-banner {
+  background: #ff6b6b;
+  color: var(--text-light);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  /* Animation properties */
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.highlighted-note {
+  border: 2px dashed var(--secondary-color);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(55, 178, 77, 0.15);
+}
+
+
+/* ========================================================== */
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  aspect-ratio: 16 / 9;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 29, 38, 0.6), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* FAQ Accordions  */
+/* ========================================================== */
+.faq-section {
+  margin: 2rem 0;
+}
+
+.faq-item {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(11, 114, 133, 0.2);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.faq-question:hover {
+  background: rgba(11, 114, 133, 0.05);
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--primary-color);
+  transition: transform var(--transition-speed) ease;
+}
+
+.faq-item[open] .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  padding: 0 1.25rem 1rem;
+  color: var(--text-dark);
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+
+
+.error-page {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  padding-top:11rem;
+}
+
+.error-code {
+  font-size: clamp(5rem, 20vw, 12rem);
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1;
+  margin: 0;
+  text-shadow: 4px 4px 0 var(--secondary-color);
+}
+
+.error-message {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  margin: 1rem 0 2rem;
+}
+
+
+
+
+/* Hamburger Button */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: transparent;
+  border: 2px solid var(--text-light);
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1002;
+  transition: border-color var(--transition-speed) ease;
+}
+
+.hamburger-btn:hover {
+  border-color: var(--secondary-color);
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-light);
+  border-radius: 2px;
+  transition: transform var(--transition-speed) ease,
+    opacity var(--transition-speed) ease,
+    background-color var(--transition-speed) ease;
+}
+
+/* Hamburger Animation - Transform to X */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hamburger-btn.active .hamburger-line {
+  background-color: var(--secondary-color);
+}
+
+/* Mobile Navigation Menu */
+nav>ul {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  max-width: 300px;
+  height: 100vh;
+  background: rgba(11, 29, 38, 0.98);
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5rem 1.5rem 2rem;
+  gap: 0.5rem;
+  margin: 0;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+  transition: right var(--transition-speed) ease;
+  z-index: 1001;
+  overflow-y: auto;
+}
+
+nav>ul.nav-open {
+  right: 0;
+}
+
+nav>ul>li {
+  width: 100%;
+  display: block;
+}
+
+nav>ul>li>a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+nav>ul>li>a:hover {
+  background: rgba(55, 178, 77, 0.2);
+}
+
+/* Submenu styles for mobile */
+#services-menu {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  background: rgba(50, 63, 66, 0.5);
+  box-shadow: none;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+#services-menu a {
+  padding: 0.5rem 1rem;
+}
+
+
+
+
+/* ========== TABLET STYLES (min-width: 768px) ========== */
+@media (min-width: 768px) {
+
+  /* Hide hamburger button on tablet and up */
+  .hamburger-btn {
+    display: none;
+  }
+
+  /* Reset nav ul for tablet/desktop */
+  nav>ul {
+    position: static;
+    width: auto;
+    max-width: none;
+    height: auto;
+    background: transparent;
+    backdrop-filter: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  nav>ul>li {
+    width: auto;
+    display: inline-block;
+  }
+
+  nav>ul>li>a {
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  nav>ul>li>a:hover {
+    background: transparent;
+  }
+
+  /* Header - Tablet */
+  .header-title {
+    text-align: left;
+  }
+
+  nav {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0.5rem 1.5rem;
+    min-height: 4.375rem;
+  }
+
+  .spacer {
+    display: block;
+    flex: 1 1 auto;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+
+  #services-menu {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    background: #323f42;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+    margin-top: 0;
+  }
+
+  /* Services Submenu - Tablet */
+  #services-menu {
+    left: 0;
+    transform: translateY(-6px);
+    min-width: 11.25rem;
+  }
+
+  #services-li:hover #services-menu,
+  #services-li:focus-within #services-menu {
+    transform: translateY(0);
+  }
+
+  /* Main - Tablet */
+  main {
+    padding: 1.5rem;
+    padding-top: 11rem;
+  }
+
+  .hero {
+    flex-direction: row;
+    padding: 1.75rem;
+    background: linear-gradient(to right, white, #275361);
+    gap: 1.5rem;
+  }
+
+  .hero-text {
+    flex: 1 1 55%;
+    text-align: left;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .button-primary,
+  .button-secondary {
+    width: auto;
+  }
+
+  .hero-img {
+    margin-top: 0;
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img img {
+    max-width: 22.5rem;
+  }
+
+  /* Service Grid - Tablet */
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  /* Benefits - Tablet */
+  .benefits {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .benefit {
+    flex: 1 1 calc(50% - 0.625rem);
+    padding: 1.25rem;
+  }
+
+  /* Stats - Tablet */
+  .stats {
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .stat-item {
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  /* Float Card - Tablet */
+  .float-card {
+    float: right;
+    width: 40%;
+    max-width: 14rem;
+    margin: 0 0 1rem 1rem;
+  }
+
+  /* Footer - Tablet */
+  footer {
+    padding: 1rem 1.5rem;
+  }
+
+  #emergency-banner {
+    font-size: 0.9375rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ========== DESKTOP STYLES (min-width: 1024px) ========== */
+@media (min-width: 1024px) {
+
+  /* Header - Desktop */
+  nav {
+    padding: 0.5rem 2rem;
+    min-height: 5rem;
+    gap: 1.25rem;
+  }
+
+  nav ul {
+    gap: 1.25rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Main - Desktop */
+  main {
+    padding: 2rem;
+    padding-top: 11rem;
+  }
+
+  .hero {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-text {
+    flex: 1 1 60%;
+  }
+
+  .hero-img {
+    flex: 1 1 40%;
+  }
+
+  .hero-img img {
+    max-width: 30rem;
+  }
+
+  /* Service Grid - Desktop */
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  /* Benefits - Desktop */
+  .benefits {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .benefit {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+
+  /* Stats - Desktop */
+  .stats {
+    margin: 2rem 0;
+    gap: 2rem;
+  }
+
+  .stat-item {
+    font-size: 1.0625rem;
+  }
+
+  /* Float Card - Desktop */
+  .float-card {
+    max-width: 15rem;
+  }
+
+  /* Footer - Desktop */
+  footer {
+    padding: 1rem 2rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  #emergency-banner {
+    font-size: 1rem;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+
+/* ========== LARGE DESKTOP (min-width: 1200px) ========== */
+@media (min-width: 1200px) {
+  .service-grid {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  }
+
+  .benefit {
+    flex: 1 1 auto;
+    min-width: 14rem;
+  }
+
+  .stats {
+    justify-content: space-around;
+  }
+
+  .image-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

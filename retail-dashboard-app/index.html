@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medic Family | Preventive Health</title>
+    <!--CSS Library - Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  
+    <header>
+        <p id="emergency-banner">2025 - Emergency Line: (01) 555-911</p>
+
+        <nav aria-label="Main Navigation">
+            <a href="index.html">
+                <h1 class="header-title">Medic Family</h1>
+            </a>
+
+            <span class="spacer" aria-hidden="true"></span>
+
+            <!-- Hamburger Menu Button (Mobile) -->
+            <button class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="nav-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <ul id="nav-menu">
+                <li><a href="index.html" class="current">Home</a></li>
+                <li id="services-li">
+                    <a  aria-haspopup="true" aria-expanded="false">Services</a>
+                    <ul id="services-menu" aria-label="submenu">
+                        <li><a href="./pages/services.html">Doc. Service</a></li>
+                        <li><a href="404.html">Examinations</a></li>
+                        <li><a href="404.html">Medicines</a></li>
+                    </ul>
+                </li>
+                <li><a href="./pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="section-title">Preventive Medicine</p>
+                
+                <h2>Your wellness is our priority</h2>
+                <p>
+                    Our multidisciplinary team combines advancedtechnology with human
+                    care to keep your health in optimal condition.
+
+                    <span class="inline-text" style="font-weight: 750">"Health isn't everything, but without it,
+                        everything else is nothing."</span>
+
+                </p>
+                <div class="hero-actions">
+                    <a class="button-primary" href="./pages/services.html">Schedule Your Checkup</a>
+                    <a class="button-secondary animate__zoomInUp" href="./pages/contact.html">Let's Talk</a>
+                </div>
+            </div>
+            <picture class="hero-img">
+
+                <source srcset="./images/img-home-small.webp" media="(max-width: 767px)"> 
+
+                <img src="./images/img-home.webp" alt="Medical team providing care to a patient" loading="lazy">
+
+            </picture>
+            <!-- <figure class="hero-img">
+                <img src="./images/img-home.webp" alt="Medical team providing care to a patient" loading="lazy">
+                <figcaption class="visually-hidden">Our dedicated medical team at work</figcaption>
+            </figure> -->
+
+        </section>
+
+        <section>
+            <h2 class="section-title">Featured Programs</h2>
+            <div class="service-grid">
+                <article class="card">
+                    <h3>Executive Checkup</h3>
+                    <p>
+                        Comprehensive evaluation in one day with specialists in cardiology,
+                        nutrition, and internal medicine.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Sleep Clinic</h3>
+                    <p>
+                        Diagnosis and treatment of sleep disorders to improve your
+                        daily energy and performance.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Active Physiotherapy</h3>
+                    <p>
+                        Personalized plans that combine manual therapy and therapeutic
+                        exercise.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="benefits" aria-label="Clinic Benefits">
+            <div class="benefit">
+                <h3>Expert Team</h3>
+                <p>
+                    Certified specialists in preventive medicine, pediatrics, and
+                    rehabilitation.
+                </p>
+            </div>
+            <div class="benefit">
+                <h3>Secure Technology</h3>
+                <p>
+                    Digitalized labs and online results with data encryption.
+                </p>
+            </div>
+            <div class="benefit">
+                <h3>Complete Support</h3>
+                <p>
+                    Continuous monitoring through telemedicine and personalized
+                    reminders.
+                </p>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Relevant Figures">
+            <span class="stat-item">98% satisfied patients</span>
+            <span class="stat-item">15 medical specialties</span>
+            <span class="stat-item">4 locations in Vancouver</span>
+        </section>
+
+        <section aria-label="Our Facilities Gallery">
+            <h2 class="section-title">Our Facilities</h2>
+            <div class="image-gallery">
+                <figure class="gallery-item">
+                    <img src="./images/Facilities-1.webp" alt="Modern medical consultation room" loading="lazy">
+                </figure>
+                <figure class="gallery-item">
+                    <img src="./images/Facilities-2.webp" alt="Clinic waiting area with natural lighting"
+                        loading="lazy">
+                </figure>
+                <figure class="gallery-item">
+                    <img src="./images/Facilities-3.webp" alt="State-of-the-art medical equipment" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section class="float-wrapper">
+            <aside class="float-card">
+                <h3>Healthy Reminder</h3>
+                <p>Stay hydrated and sleep 7-8 hours each night for better immunity.</p>
+            </aside>
+            <h2>Health Education</h2>
+            <p>
+                Our weekly-updated blog covers prevention, nutrition, and physical
+                activity. Each article includes practical recommendations and
+                links to official guides.
+            </p>
+
+            <div class="clear-floats">
+                <p>
+                    We also offer group workshops for families, companies, and
+                    educational centers, adapted to the needs of each audience.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Progress Stories</h2>
+            <div class="overflow-panel" aria-live="polite">
+                <p>
+                    "Through my executive checkup, I was able to detect a heart problem
+                    in time and today I have a comprehensive follow-up plan." - Maria, 42
+                    years old.
+                </p>
+                <p>
+                    "Telemedicine allowed me to maintain my physiotherapy treatment
+                    even while traveling for work." - Luis, 35 years old.
+                </p>
+                <p>
+                    "The corporate workshops helped us reduce absenteeism by
+                    30% and improve workplace culture." - Ana, HR Manager.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Accordions with at least 3 folds            -->
+     
+        <section class="faq-section" aria-label="Frequently Asked Questions">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <details class="faq-item">
+                <summary class="faq-question">What insurance plans do you accept?</summary>
+                <div class="faq-answer">
+                    <p>We accept most major insurance plans including Blue Cross, Aetna, United Healthcare, and
+                        Medicare. Contact us for a complete list of accepted providers.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">How do I schedule an appointment?</summary>
+                <div class="faq-answer">
+                    <p>You can schedule an appointment online through our patient portal, by calling our reception at
+                        (01) 555-911, or by visiting our Contact page to send us a message.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">Do you offer telemedicine consultations?</summary>
+                <div class="faq-answer">
+                    <p>Yes! We offer secure video consultations for follow-up appointments and non-emergency
+                        consultations. Our telemedicine platform is available on desktop and mobile devices.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">What should I bring to my first visit?</summary>
+                <div class="faq-answer">
+                    <p>Please bring your insurance card, a valid photo ID, a list of current medications, and any
+                        relevant medical records or test results from previous providers.</p>
+                </div>
+            </details>
+        </section>
+
+        <section class="highlighted-note" aria-label="Accessibility Note">
+            <h2>Commitment to Accessibility</h2>
+            <p>
+                All facilities feature ramps, braille signage, and personalized
+                assistance to ensure an inclusive experience.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Medic Family. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
