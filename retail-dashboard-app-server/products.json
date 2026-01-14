@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Vitamin C 1000mg",
+    "price": 12.99,
+    "category": "vitamins",
+    "stock": 99,
+    "image": "/images/vitaminc.png",
+    "description": "High-potency Vitamin C supplement for immune support and antioxidant protection",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Great product, very effective!"
+      },
+      {
+        "rating": 4,
+        "comment": "Good quality, would recommend"
+      }
+    ],
+    "sales": 121
+  },
+  {
+    "id": 2,
+    "name": "Omega-3 Fish Oil",
+    "price": 15.99,
+    "category": "supplements",
+    "stock": 82,
+    "image": "/images/omega3.png",
+    "description": "Premium fish oil rich in EPA and DHA for heart and brain health",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Excellent for heart health"
+      },
+      {
+        "rating": 5,
+        "comment": "Great supplement, no fishy aftertaste"
+      }
+    ],
+    "sales": 98
+  },
+  {
+    "id": 3,
+    "name": "Magnesium 400mg",
+    "price": 10.99,
+    "category": "minerals",
+    "stock": 110,
+    "image": "/images/magnesium.png",
+    "description": "Supports muscle relaxation, bone health, and energy production",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Good quality"
+      },
+      {
+        "rating": 4,
+        "comment": "Helps with sleep"
+      }
+    ],
+    "sales": 80
+  },
+  {
+    "id": 4,
+    "name": "Whey Protein Powder",
+    "price": 29.99,
+    "category": "protein",
+    "stock": 75,
+    "image": "/images/protein.png",
+    "description": "High-quality whey protein isolate for muscle building and recovery",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Amazing taste!"
+      },
+      {
+        "rating": 5,
+        "comment": "Perfect for post-workout"
+      }
+    ],
+    "sales": 150
+  },
+  {
+    "id": 5,
+    "name": "Multivitamin Daily",
+    "price": 14.99,
+    "category": "vitamins",
+    "stock": 95,
+    "image": "/images/dailymulti.png",
+    "description": "Complete daily multivitamin formula with essential nutrients",
+    "reviews": [
+      {
+        "rating": 4,
+        "comment": "Good all-rounder"
+      },
+      {
+        "rating": 3,
+        "comment": "Decent product"
+      }
+    ],
+    "sales": 110
+  },
+  {
+    "id": 6,
+    "name": "Zinc 30mg",
+    "price": 9.99,
+    "category": "minerals",
+    "stock": 120,
+    "image": "/images/zinc.png",
+    "description": "Supports immune system function and wound healing",
+    "reviews": [
+      {
+        "rating": 5,
+        "comment": "Great for immunity!"
+      },
+      {
+        "rating": 4,
+        "comment": "Excellent value"
+      }
+    ],
+    "sales": 100
+  }
+]

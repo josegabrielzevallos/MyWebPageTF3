@@ -1,0 +1,31 @@
+[
+  {
+    "id": "a1132d9c-6768-4478-a0f4-2c987f97282c",
+    "customer": {
+      "name": "Jose Zevallos",
+      "email": "jose.zevallos.delgadolaflor@gmail.com",
+      "address": "ynahura",
+      "city": "Arequipa",
+      "zip": "054",
+      "card": "12315456487"
+    },
+    "items": [
+      {
+        "id": 1,
+        "name": "Vitamin C 1000mg",
+        "price": 12.99,
+        "quantity": 1,
+        "image": "https://via.placeholder.com/250x250?text=Vitamin+C"
+      },
+      {
+        "id": 2,
+        "name": "Omega-3 Fish Oil",
+        "price": 15.99,
+        "quantity": 3,
+        "image": "https://via.placeholder.com/250x250?text=Omega3"
+      }
+    ],
+    "totalAmount": 60.96,
+    "timestamp": "2026-01-13T08:00:14.194Z"
+  }
+]

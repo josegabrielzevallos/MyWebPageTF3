@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 
 <body>
@@ -41,10 +42,112 @@
                     </ul>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="./pages/dashboard.html" class="current">Dashboard</a></li>
+                <li><a href="dashboard.html" class="current">Dashboard</a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section class="dashboard-section">
+            <h1>Sales & Analytics Dashboard</h1>
+            <p class="section-subtitle">Monitor inventory, sales, and customer feedback</p>
+
+            <div class="dashboard-controls">
+                <button id="refresh-dashboard-btn" class="btn btn-secondary">Refresh Dashboard</button>
+                <button id="restock-btn" class="btn btn-secondary">Increase Stock</button>
+                <button id="export-report-btn" class="btn btn-secondary">Export Report</button>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Inventory Chart -->
+                <div class="dashboard-chart-container">
+                    <div class="chart-card">
+                        <h3>Inventory Status</h3>
+                        <canvas id="inventoryChart"></canvas>
+                        <p class="chart-description">Current stock levels for all products</p>
+                    </div>
+                </div>
+
+                <!-- Sales Chart -->
+                <div class="dashboard-chart-container">
+                    <div class="chart-card">
+                        <h3>Product Sales</h3>
+                        <canvas id="salesChart"></canvas>
+                        <p class="chart-description">Total units sold per product</p>
+                    </div>
+                </div>
+
+                <!-- Average Reviews Chart -->
+                <div class="dashboard-chart-container">
+                    <div class="chart-card">
+                        <h3>Average Product Ratings</h3>
+                        <canvas id="reviewsChart"></canvas>
+                        <p class="chart-description">Average customer ratings (1-5 stars)</p>
+                    </div>
+                </div>
+
+                <!-- Sentiment Analysis Chart -->
+                <div class="dashboard-chart-container">
+                    <div class="chart-card">
+                        <h3>Sentiment Analysis</h3>
+                        <canvas id="sentimentChart"></canvas>
+                        <p class="chart-description">Keyword frequency in customer reviews</p>
+                    </div>
+                </div>
+
+                <!-- Price Distribution -->
+                <div class="dashboard-chart-container">
+                    <div class="chart-card">
+                        <h3>Price Distribution</h3>
+                        <canvas id="priceChart"></canvas>
+                        <p class="chart-description">Product price ranges</p>
+                    </div>
+                </div>
+
+                <!-- Category Distribution -->
+                <div class="dashboard-chart-container">
+                    <div class="chart-card">
+                        <h3>Products by Category</h3>
+                        <canvas id="categoryChart"></canvas>
+                        <p class="chart-description">Distribution of products by category</p>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h4>Total Products</h4>
+                        <p id="stat-total-products" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Total Sales</h4>
+                        <p id="stat-total-sales" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Average Rating</h4>
+                        <p id="stat-avg-rating" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Low Stock Items</h4>
+                        <p id="stat-low-stock" class="stat-value">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Reviews Section -->
+            <div class="recent-reviews-section">
+                <h2>Recent Customer Reviews</h2>
+                <div id="recent-reviews" class="reviews-container">
+                    <!-- Recent reviews will be displayed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+  
+
+   
+
 
  
 
@@ -52,6 +155,7 @@
         <p>&copy; 2025 Medic Family. All rights reserved.</p>
     </footer>
 
+    <script src="../dashboard.js"></script>
     <script src="../script.js"></script>
 </body>
 

@@ -1,23 +1,19 @@
-# Medic Family - Preventive Health Website
+# 🛍️ Retail Dashboard Client - Frontend Documentation
 
-<!-- CRITERIA 1: Project Idea -->
-## Project Overview
+Modern, responsive e-commerce web application for browsing and purchasing vitamins and supplements.
 
-**Medic Family** is a modern, responsive website for a preventive healthcare clinic. The project demonstrates advanced HTML5 and CSS3 techniques including semantic markup, responsive design with mobile-first approach, CSS animations, and accessibility best practices.
+## Features
 
-### Features
-- 🏥 Multi-page healthcare website
-- 📱 Fully responsive design (Mobile, Tablet, Desktop)
-- ♿ WCAG accessibility compliance
-- 🎨 Modern CSS with custom properties
-- ✨ Smooth animations and transitions
-
-## Biggest Challenge
-
-The biggest challenge was implementing a **mobile-first responsive design** while maintaining visual consistency across all breakpoints. 
-
-### How I Overcame It:
-1. Started with base mobile styles first
+- ✅ Product browsing with search and filtering
+- ✅ Detailed product information with images
+- ✅ Customer review system (1-5 stars + comments)
+- ✅ Shopping cart with Web Storage persistence
+- ✅ Checkout process with order confirmation
+- ✅ Sales analytics dashboard with 6 interactive charts
+- ✅ Sentiment analysis of customer reviews
+- ✅ Real-time inventory tracking
+- ✅ Responsive design (mobile, tablet, desktop)
+- ✅ No external UI frameworks (pure HTML/CSS/JS)
 2. Used CSS custom properties for consistent values
 3. Tested at multiple viewport sizes
 4. Use all the requirements on the page
